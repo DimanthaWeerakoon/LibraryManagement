@@ -1,5 +1,6 @@
 package com.librarymanagement.librarymanagement.Controller;
 
+import com.librarymanagement.librarymanagement.Exception.ResourceNotFoundExecption;
 import com.librarymanagement.librarymanagement.Model.Book;
 import com.librarymanagement.librarymanagement.Service.BookService;
 import org.springframework.http.HttpStatus;
@@ -29,5 +30,12 @@ public class BookController {
     public List<Book> getAllBooks(){
         return bookService.getAllBooks();
     }
+    //Get book by ID REST API
+    @GetMapping("{id}")
+    public ResponseEntity<Book> getBookById(@PathVariable("id") long id) throws ResourceNotFoundExecption {
+        return new ResponseEntity<Book>(bookService.getBookById(id), HttpStatus.OK);
+    }
+
+
 
 }
