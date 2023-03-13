@@ -1,4 +1,10 @@
 package com.librarymanagement.librarymanagement.Service;
 
-public class BookService {
-}
+import com.librarymanagement.librarymanagement.Model.Book;
+
+import java.util.List;
+
+public interface BookService {
+    Book saveBook(Book book);
+    List<Book> getAllBooks();
+};

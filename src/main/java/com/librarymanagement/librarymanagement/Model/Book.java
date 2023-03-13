@@ -16,12 +16,8 @@ public class Book {
 
     @Column(name="book_name", nullable = false)
     private String bookName;
-    @Column(name="book_ISBN", nullable = false)
+    @Column(name="book_ISBN")
     private String bookISBN;
-    @Column(name="book_author", nullable = false)
+    @Column(name="book_author")
     private String bookAuthor;
-    @Column(name="book_out")
-    private Date bookOut;
-    @Column(name="book_in")
-    private Date bookIn;
 }
