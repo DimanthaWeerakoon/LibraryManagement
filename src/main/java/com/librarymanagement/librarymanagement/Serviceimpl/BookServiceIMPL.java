@@ -41,7 +41,16 @@ public class BookServiceIMPL implements BookService {
         }
     }
 
-
+    @Override
+    public Book updateBook(Book book, long id) throws ResourceNotFoundExecption {
+        Book existingBook = bookRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFoundExecption("Book", "Id", id));
+        existingBook.setBookISBN(book.getBookISBN());
+        existingBook.setBookName(book.getBookName());
+        existingBook.setBookAuthor(book.getBookAuthor());
+        bookRepository.save(existingBook);
+        return existingBook;
+    }
 
 
 }

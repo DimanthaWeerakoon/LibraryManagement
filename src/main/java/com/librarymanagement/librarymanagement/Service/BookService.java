@@ -9,4 +9,5 @@ public interface BookService {
     Book saveBook(Book book);
     List<Book> getAllBooks();
     Book getBookById(long id) throws ResourceNotFoundExecption;
+    Book updateBook(Book book, long id) throws ResourceNotFoundExecption;
 };

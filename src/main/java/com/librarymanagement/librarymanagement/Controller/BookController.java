@@ -36,6 +36,12 @@ public class BookController {
         return new ResponseEntity<Book>(bookService.getBookById(id), HttpStatus.OK);
     }
 
+    //Update book REST API
+    @PutMapping("{id}")
+    public ResponseEntity<Book> updateBook(@PathVariable("id") long id, @RequestBody Book book) throws ResourceNotFoundExecption {
+        return new ResponseEntity<Book>(bookService.updateBook(book, id), HttpStatus.OK);
+    }
+
 
 
 }
