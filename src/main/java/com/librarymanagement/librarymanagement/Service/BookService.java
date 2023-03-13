@@ -10,4 +10,5 @@ public interface BookService {
     List<Book> getAllBooks();
     Book getBookById(long id) throws ResourceNotFoundExecption;
     Book updateBook(Book book, long id) throws ResourceNotFoundExecption;
+    void deleteBook(long id) throws ResourceNotFoundExecption;
 };

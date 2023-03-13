@@ -42,6 +42,13 @@ public class BookController {
         return new ResponseEntity<Book>(bookService.updateBook(book, id), HttpStatus.OK);
     }
 
+    //Delete book record REST API
+    @DeleteMapping("{id}")
+    public  ResponseEntity<String> deleteBook(@PathVariable("id") long id) throws ResourceNotFoundExecption {
+        bookService.deleteBook(id);
+
+        return new ResponseEntity<String>("Boor record deleted successfully!", HttpStatus.OK);
+    }
 
 
 }

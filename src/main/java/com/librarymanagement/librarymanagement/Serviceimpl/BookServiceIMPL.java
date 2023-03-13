@@ -52,5 +52,12 @@ public class BookServiceIMPL implements BookService {
         return existingBook;
     }
 
+    @Override
+    public void deleteBook(long id) throws ResourceNotFoundExecption {
+        bookRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFoundExecption("Book", "Id", id));
+        bookRepository.deleteById(id);
+    }
+
 
 }
